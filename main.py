@@ -1,6 +1,6 @@
 import os
 from zlib import decompress
-
+print(list(os.environ.keys()))
 os.system('pip install gpt-2-simple pandas requests')
 
 from requests import get
