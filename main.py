@@ -1,11 +1,12 @@
 import os
 from zlib import decompress
-from requests import get
 
 promnts_url = os.environ('SECRET_URL')
 with open('compressed.bin','wb') as cb: cb.write(get(promnts_url).content)
-os.system('pip install gpt-2-simple pandas')
-
+os.system('pip install gpt-2-simple pandas requests')
+from requests import get
+promnts_url = os.environ('SECRET_URL')
+with open('compressed.bin','wb') as cb: cb.write(get(promnts_url).content)
 with open('compressed.bin','rb') as f:
   open('prompts.csv','wb').write(decompress(f.read()))
 
