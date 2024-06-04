@@ -27,6 +27,6 @@ jobs:
       run: pip install -r requirements.txt -q
     - name: Run app
       env: # Or as an environment variable
-        super_secret: ${{ secrets.SECRET_URL }}
+        SECRET_URL: ${{ secrets.SECRET_URL }}
       run: |
         python main.py
